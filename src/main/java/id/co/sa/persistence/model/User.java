@@ -31,7 +31,7 @@ public class User {
 
     private boolean tokenExpired;
 
-    //
+    //TODO Keterangan User guru lainnya
 
     @ManyToMany
     @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id") , inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id") )
