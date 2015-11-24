@@ -78,8 +78,8 @@ ${param.message}
                 <spring:message code="label.form.loginTitle"></spring:message>
             </h1>
             <a href="?lang=en"><spring:message code="label.form.loginEnglish"></spring:message></a>
-            | <a href="?lang=es_ES"><spring:message
-                    code="label.form.loginSpanish"></spring:message></a>
+            | <a href="?lang=id"><spring:message
+                    code="label.form.loginIndonesia"></spring:message></a>
             <br><br>
             <form name='f' action="j_spring_security_check" method='POST'
                 onsubmit="return validate();">
