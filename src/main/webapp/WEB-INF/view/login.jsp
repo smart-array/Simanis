@@ -1,5 +1,5 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ page session="true"%>
@@ -11,11 +11,11 @@
 <html>
 
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<link rel="stylesheet" href='<spring:url value="resources/css/login.css" />'>
-
-<title><spring:message code="label.pages.login" /></title>
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href='<spring:url value="resources/css/login.css" />'>
+	<link rel="stylesheet" href='<spring:url value="resources/css/main.css" />'>
+	<link rel="icon" href='<spring:url value="resources/images/favicon.png" />'>
+	<title><spring:message code="label.pages.login" /></title>
 </head>
 
 <body>
@@ -31,25 +31,25 @@
 					        <c:when
 					            test="${SPRING_SECURITY_LAST_EXCEPTION.message == 'User is disabled'}">
 					            <div class="alert alert-danger">
-					                <spring:message code="auth.message.disabled"></spring:message>
+					                <spring:message code="auth.message.disabled" />
 					            </div>
 					        </c:when>
 					        <c:when
 					            test="${SPRING_SECURITY_LAST_EXCEPTION.message == 'User account has expired'}">
 					            <div class="alert alert-danger">
-					                <spring:message code="auth.message.expired"></spring:message>
+					                <spring:message code="auth.message.expired" />
 					            </div>
 					        </c:when>
 					        <c:when
 					            test="${SPRING_SECURITY_LAST_EXCEPTION.message == 'blocked'}">
 					            <div class="alert alert-danger">
-					               <spring:message code="auth.message.blocked"></spring:message>
+					               <spring:message code="auth.message.blocked" />
 					            </div>
 					        </c:when>
 					        <c:otherwise>
 					            <div class="alert alert-danger">
 					            <!-- <c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}"/> -->
-					                <spring:message code="message.badCredentials"></spring:message>
+					                <spring:message code="message.badCredentials" />
 					            </div>
 					        </c:otherwise>
 					    </c:choose>
@@ -75,9 +75,16 @@
 		   		<a class="text-center new-account" href='<c:url value="registration.html" />'><spring:message code="label.form.loginSignUp" /></a>
             </div>
         </div>
-        <a href="?lang=en"><spring:message code="label.form.loginEnglish" /></a>
-		<a href="?lang=id"><spring:message code="label.form.loginIndonesia" /></a>
+        
     </div>
+
+	<footer class="footer">
+		<div class="container">
+			<a href="?lang=en"><spring:message code="label.form.loginEnglish" /></a>
+			<a href="?lang=id"><spring:message code="label.form.loginIndonesia" /></a>
+		</div>
+	</footer>
+
 </body>
 
 <script type="text/javascript">
