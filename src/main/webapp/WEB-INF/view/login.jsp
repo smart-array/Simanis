@@ -1,8 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ page session="true"%>
+<%@ include file="/WEB-INF/template/taglib.jsp" %>
 
 <fmt:setBundle basename="messages" />
 <fmt:message key="message.password" var="noPass" />
@@ -11,10 +7,8 @@
 <html>
 
 <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<%@ include file="/WEB-INF/template/css.jsp" %>
 	<link rel="stylesheet" href='<spring:url value="resources/css/login.css" />'>
-	<link rel="stylesheet" href='<spring:url value="resources/css/main.css" />'>
-	<link rel="icon" href='<spring:url value="resources/images/favicon.png" />'>
 	<title><spring:message code="label.pages.login" /></title>
 </head>
 
@@ -77,14 +71,12 @@
         </div>
         
     </div>
+    
+    <!-- Footer -->
+    <%@ include file="/WEB-INF/template/footer.jsp" %>
 
-	<footer class="footer">
-		<div class="container">
-			<a href="?lang=en"><spring:message code="label.form.loginEnglish" /></a>
-			<a href="?lang=id"><spring:message code="label.form.loginIndonesia" /></a>
-		</div>
-	</footer>
-
+	<!-- Javascript -->
+	<%@ include file="/WEB-INF/template/js.jsp" %>
 </body>
 
 <script type="text/javascript">
