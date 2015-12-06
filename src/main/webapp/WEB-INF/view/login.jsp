@@ -1,3 +1,4 @@
+<!-- Include taglib file -->
 <%@ include file="/WEB-INF/template/taglib.jsp" %>
 
 <fmt:setBundle basename="messages" />
@@ -7,7 +8,10 @@
 <html>
 
 <head>
+
+	<!-- Include main css  -->
 	<%@ include file="/WEB-INF/template/css.jsp" %>
+	
 	<link rel="stylesheet" href='<spring:url value="resources/css/login.css" />'>
 	<title><spring:message code="label.pages.login" /></title>
 </head>
@@ -72,10 +76,10 @@
         
     </div>
     
-    <!-- Footer -->
+    <!-- Include Footer -->
     <%@ include file="/WEB-INF/template/footer.jsp" %>
 
-	<!-- Javascript -->
+	<!-- Include main javascript file -->
 	<%@ include file="/WEB-INF/template/js.jsp" %>
 </body>
 
