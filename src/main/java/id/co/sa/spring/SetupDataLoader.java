@@ -21,7 +21,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Component
 public class SetupDataLoader implements ApplicationListener<ContextRefreshedEvent> {
 
-    private boolean alreadySetup = false;
+	// Set to false to initial database and table
+    private boolean alreadySetup = true;
 
     @Autowired
     private UserRepository userRepository;
