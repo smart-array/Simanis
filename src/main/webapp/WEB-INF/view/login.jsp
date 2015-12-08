@@ -21,6 +21,7 @@
     <div class="container">
         <div class="row">
         	<div class="col-sm-6 col-md-4 col-md-offset-4">
+	       		<img class="center-block" class="img-circle" alt="Logo" src='<spring:url value="resources/images/logo.png" />'>
             	<h1 class="text-center login-title"><spring:message code="label.form.loginTitle" /></h1>
 	            
 	            <div class="account-wall">
