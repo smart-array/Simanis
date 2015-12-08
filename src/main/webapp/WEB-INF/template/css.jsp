@@ -1,5 +1,3 @@
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-
 <link rel="icon" href='<spring:url value="resources/images/favicon.png" />'>
 
 <!-- Latest compiled and minified CSS -->

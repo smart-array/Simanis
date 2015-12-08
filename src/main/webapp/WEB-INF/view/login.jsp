@@ -1,5 +1,7 @@
-<!-- Include taglib file -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <%@ include file="/WEB-INF/template/taglib.jsp" %>
+<%@ page session="true"%>
 
 <fmt:setBundle basename="messages" />
 <fmt:message key="message.password" var="noPass" />
@@ -20,6 +22,7 @@
 
     <div class="container">
         <div class="row">
+        
         	<div class="col-sm-6 col-md-4 col-md-offset-4">
 	       		<img class="center-block" class="img-circle" alt="Logo" src='<spring:url value="resources/images/logo.png" />'>
             	<h1 class="text-center login-title"><spring:message code="label.form.loginTitle" /></h1>
@@ -66,16 +69,17 @@
 						<input class="form-control" type='password' name='j_password' placeholder='<spring:message code="label.form.loginPass" />' required>						
 						
 						<button class="btn btn-lg btn-primary btn-block" type="submit"><spring:message code="label.form.loginSignIn"/></button>
-						<a class="pull-right need-help" href='<c:url value="/forgetPassword.html" />'><spring:message code="message.resetPassword" />&nbsp;</a><span class="clearfix"></span>
+						<a class="pull-right need-help" href='<c:url value="/forgetPassword.html" />'>
+							<spring:message code="message.resetPassword" />&nbsp;<span class="clearfix"></span></a>
 						
 		            </form>
 		            
 	            </div>
 		   		<a class="text-center new-account" href='<c:url value="registration.html" />'><spring:message code="label.form.loginSignUp" /></a>
             </div>
-        </div>
-        
-    </div>
+            
+        </div> <!-- .row -->
+    </div> <!-- .container -->
     
     <!-- Include Footer -->
     <%@ include file="/WEB-INF/template/footer.jsp" %>
