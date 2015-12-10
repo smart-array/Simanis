@@ -1,14 +1,13 @@
-<!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/template/taglib.jsp"%>
 <%@ page session="false"%>
+<!DOCTYPE html>
 <html>
 <head>
 
 	<!-- Include main css  -->
 	<%@ include file="/WEB-INF/template/css.jsp"%>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 	<title><spring:message code="label.form.title" /></title>
 </head>
 <body>

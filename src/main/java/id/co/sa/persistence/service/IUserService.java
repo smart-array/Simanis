@@ -1,5 +1,7 @@
 package id.co.sa.persistence.service;
 
+import java.util.List;
+
 import id.co.sa.persistence.model.PasswordResetToken;
 import id.co.sa.persistence.model.User;
 import id.co.sa.persistence.model.VerificationToken;
@@ -11,6 +13,8 @@ public interface IUserService {
 
     User getUser(String verificationToken);
 
+    List<User> getUsers();
+    
     void saveRegisteredUser(User user);
 
     void deleteUser(User user);

@@ -1,5 +1,15 @@
 package id.co.sa.persistence.service;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.UUID;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
 import id.co.sa.persistence.dao.PasswordResetTokenRepository;
 import id.co.sa.persistence.dao.RoleRepository;
 import id.co.sa.persistence.dao.UserRepository;
@@ -8,15 +18,6 @@ import id.co.sa.persistence.model.PasswordResetToken;
 import id.co.sa.persistence.model.User;
 import id.co.sa.persistence.model.VerificationToken;
 import id.co.sa.validation.EmailExistsException;
-
-import java.util.Arrays;
-import java.util.UUID;
-
-import javax.transaction.Transactional;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
@@ -58,6 +59,11 @@ public class UserService implements IUserService {
     public User getUser(final String verificationToken) {
         final User user = tokenRepository.findByToken(verificationToken).getUser();
         return user;
+    }
+    
+    @Override
+    public List<User> getUsers() {
+    	return repository.findAll();
     }
 
     @Override
